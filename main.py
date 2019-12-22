@@ -30,6 +30,7 @@ def create_table(header_list, data_list):
     :return: no return, prints the table to the terminal
     '''
     table = Texttable()
+    table.set_max_width(300)
     table.add_row(header_list)
     for i in range(len(data_list)):
         data_list[i] = data_list[i].strip().split(' ')
@@ -89,6 +90,7 @@ for i in range(8, len(stats_list), 16):
 str = '\n\tBase Stats'
 print(str.expandtabs(30))
 stats_table = Texttable()
+stats_table.set_max_width(200)
 stats_table.add_row(['\t\t', 'Pkmn Lvl', 'HP', 'Attack', 'Defense', 'Sp. Attack', 'Sp. Defense', 'Speed'])
 for i in range(0, len(stats_list), 8):
     stats_table.add_row(stats_list[i:i+8])
